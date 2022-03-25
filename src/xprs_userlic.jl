@@ -34,7 +34,7 @@ function get_xpauthpath(xpauth_path = "", verbose::Bool = true)
     end
 
     # user´s lib dir
-    push!(candidates, joinpath(dirname(dirname(xprs)), "bin", XPAUTH))
+    # push!(candidates, joinpath(dirname(dirname(xprs)), "bin", XPAUTH))
 
     for i in candidates
         if isfile(i)
@@ -57,9 +57,9 @@ function userlic(; verbose::Bool = true, liccheck::Function = emptyliccheck, xpa
 
     # change directory to reach all libs
     initdir = pwd()
-    if isdir(dirname(xprs))
-        cd(dirname(xprs))
-    end
+    # if isdir(dirname(xprs))
+    #     cd(dirname(xprs))
+    # end
 
     # open and free xpauth.xpr (touches the file to release it)
     path_lic = get_xpauthpath(xpauth_path, verbose)
