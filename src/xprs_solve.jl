@@ -851,7 +851,7 @@ function get_iisdata(model::Model, num::Int)
         throw(XpressError(model))
     end
 
-    return rows_set + 1, cols_set + 1
+    return rows_set .+ 1, cols_set .+ 1
 end
 
 
